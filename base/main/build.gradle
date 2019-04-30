@@ -2,5 +2,9 @@ apply from: "$rootDir/common-kotlin-library.gradle"
 
 dependencies {
     implementation project(Modules.models)
+    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: '1.3.31'
+
+
+    testImplementation Libraries.junit
 }
 

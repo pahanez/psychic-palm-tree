@@ -1,5 +1,6 @@
 object Versions {
     val kotlin = "1.3.21"
+    val junit = "4.12"
 }
 
 object Modules {
@@ -14,4 +15,5 @@ object Dependencies {
 
 object Libraries {
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+    val junit = "junit:junit:${Versions.junit}"
 }
