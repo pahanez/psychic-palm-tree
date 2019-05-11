@@ -1,5 +1,6 @@
 apply from: "$rootDir/common-kotlin-library.gradle"
 
 dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.kotlin
 }

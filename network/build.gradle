@@ -1,0 +1,17 @@
+apply from: "$rootDir/common-kotlin-library.gradle"
+
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(Modules.models)
+
+//    implementation Libraries.jodaTime
+    implementation Libraries.dagger
+    implementation Libraries.core
+    implementation Libraries.moshi
+    implementation Libraries.logging
+    implementation Libraries.coroutines
+
+    testImplementation Libraries.junit
+}

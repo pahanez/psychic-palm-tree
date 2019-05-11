@@ -1,11 +1,10 @@
 package com.pahanez.ppt.main
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
-
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +14,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+
         fab.setOnClickListener { view ->
+
+            /*Timer().schedule(object: TimerTask() {
+                override fun run() {// Do nothing
+                    runOnUiThread {
+                        println("executed ${Thread.currentThread()}" )
+                        Thread.sleep(200)
+                    }
+                }
+
+            }, 0, 1000)*/
+//            ViewModelProviders.of(this).get(MainViewModel::class.java)
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }

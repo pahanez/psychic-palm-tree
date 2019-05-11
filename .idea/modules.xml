@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/models/base-models.iml" filepath="$PROJECT_DIR$/base/models/base-models.iml" />
       <module fileurl="file://$PROJECT_DIR$/buildSrc/buildSrc.iml" filepath="$PROJECT_DIR$/buildSrc/buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/glue/glue.iml" filepath="$PROJECT_DIR$/glue/glue.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/main/main.iml" filepath="$PROJECT_DIR$/base/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" />
       <module fileurl="file://$PROJECT_DIR$/psychic-palm-tree.iml" filepath="$PROJECT_DIR$/psychic-palm-tree.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
     </modules>
