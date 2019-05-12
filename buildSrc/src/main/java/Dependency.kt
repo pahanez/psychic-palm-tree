@@ -19,6 +19,7 @@ object Modules {
     val models = ":base:models"
     val main = ":base:main"
     val ui = ":ui"
+    val network = ":network"
 }
 
 object Dependencies {

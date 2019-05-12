@@ -1,14 +1,10 @@
 package com.pahanez.ppt.network
 
+import com.pahanez.ppt.main.StockDataSource
 import com.pahanez.ppt.models.Stock
 import com.pahanez.ppt.network.dto.toStock
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
-
-interface StockDataSource {
-    fun getStockDataAsync(): Deferred<Stock>
-
-}
 
 internal class StockDataSourceImpl : StockDataSource {
 

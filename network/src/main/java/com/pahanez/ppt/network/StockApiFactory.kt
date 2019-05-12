@@ -44,7 +44,7 @@ internal object StockApiFactory {
     private fun createConverter(): Converter.Factory {
 
         val moshi = Moshi.Builder()
-            .add(LocalDateTime::class.java, TimeAdapter())
+            .add(LocalDateTime::class.java, TimeAdapter())//TODO
             .build()
         return MoshiConverterFactory.create(moshi)
     }

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 
 android {
@@ -26,10 +27,18 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libraries.kotlin
 
-    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
 
+    implementation project(Modules.models)
+    implementation project(Modules.main)
+    implementation project(Modules.network)
+
+
+    implementation Libraries.coroutines
+    implementation Libraries.dagger
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
+
+    testImplementation Libraries.junit
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

@@ -27,6 +27,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(Modules.glue)
+    implementation project(Modules.main)
+
     implementation Libraries.kotlin
 
     implementation Libraries.dagger

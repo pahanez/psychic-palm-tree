@@ -3,6 +3,7 @@ apply from: "$rootDir/common-kotlin-library.gradle"
 dependencies {
     implementation project(Modules.models)
     implementation Libraries.kotlin_reflect
+    implementation Libraries.coroutines
 
     testImplementation Libraries.junit
 }

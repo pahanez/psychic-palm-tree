@@ -1,18 +1,31 @@
-package com.pahanez.ppt.main
+package com.pahanez.ppt.main.ui.main
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
+import com.pahanez.ppt.glue.viewmodel.MainViewModel
+import com.pahanez.ppt.main.R
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        inject(this)
         setSupportActionBar(toolbar)
+
+        mainViewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(MainViewModel::class.java)
 
 
         fab.setOnClickListener { view ->
@@ -46,5 +59,9 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

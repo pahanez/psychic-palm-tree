@@ -1,2 +1,1 @@
-include ':network'
-include Modules.glue, Modules.ui, Modules.models, Modules.main
+include Modules.glue, Modules.ui, Modules.models, Modules.main, Modules.network
