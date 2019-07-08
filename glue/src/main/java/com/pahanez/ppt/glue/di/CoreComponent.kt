@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.pahanez.ppt.glue.viewmodel.ViewModelModule
 import com.pahanez.ppt.main.StockDataSource
 import dagger.Component
+import javax.inject.Singleton
 
 @Component(
     modules = [
@@ -11,6 +12,7 @@ import dagger.Component
         NetworkModule::class
     ]
 )
+@Singleton
 interface CoreComponent {
     @Component.Builder interface Builder {
         fun build(): CoreComponent

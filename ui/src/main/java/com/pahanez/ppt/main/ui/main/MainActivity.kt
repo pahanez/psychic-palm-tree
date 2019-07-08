@@ -1,14 +1,17 @@
 package com.pahanez.ppt.main.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.pahanez.ppt.glue.viewmodel.MainViewModel
 import com.pahanez.ppt.main.R
+import com.pahanez.ppt.main.ui.gui.GuiActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -17,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var mainViewModel: MainViewModel
+
+    val screens = listOf("UI")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,19 +34,18 @@ class MainActivity : AppCompatActivity() {
 
 
         fab.setOnClickListener { view ->
-
-            /*Timer().schedule(object: TimerTask() {
-                override fun run() {// Do nothing
-                    runOnUiThread {
-                        println("executed ${Thread.currentThread()}" )
-                        Thread.sleep(200)
-                    }
-                }
-
-            }, 0, 1000)*/
-//            ViewModelProviders.of(this).get(MainViewModel::class.java)
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+
+        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, screens)
+        list.adapter = adapter
+
+        list.setOnItemClickListener { parent, view, position, id ->
+            when (screens[position]) {
+                "UI" -> startActivity(Intent(this, GuiActivity::class.java))
+            }
+            finish()
         }
     }
 

@@ -3,25 +3,23 @@ package com.pahanez.ppt.network
 import com.pahanez.ppt.main.StockDataSource
 import com.pahanez.ppt.models.Stock
 import com.pahanez.ppt.network.dto.toStock
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.async
 
 internal class StockDataSourceImpl : StockDataSource {
 
     private val stockApi: StockApi = StockApiFactory.create()
 
-    override fun getStockDataAsync(): Deferred<Stock> {
-        return async {
+    override suspend fun getStockData(): Stock {
+
             val response = stockApi.getStockData().execute()
             if(response.isSuccessful) {
                 val body = response.body()
                 if(body != null) {
-                    return@async body.toStock()
+                    return body.toStock()
                 }
             }
 
             throw IllegalStateException()
-        }
+
     }
 
 }

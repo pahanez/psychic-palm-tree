@@ -12,7 +12,7 @@ class MainViewModel @Inject constructor(val dataSource: StockDataSource): ViewMo
         println("main view model init")
 
         GlobalScope.async {
-            val result = dataSource.getStockDataAsync().await()
+            val result = dataSource.getStockData()
             println("main view model init $result")
         }
     }

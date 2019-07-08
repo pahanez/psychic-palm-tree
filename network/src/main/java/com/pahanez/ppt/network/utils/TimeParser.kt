@@ -3,7 +3,7 @@ package com.pahanez.ppt.network.utils
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-object TimeParser {
+object  TimeParser {
 
     private val dateTimeFormatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
 

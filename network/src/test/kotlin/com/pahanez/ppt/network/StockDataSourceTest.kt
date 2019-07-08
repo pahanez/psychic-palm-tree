@@ -1,5 +1,6 @@
 package com.pahanez.ppt.network
 
+import com.pahanez.ppt.main.StockDataSource
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Before
@@ -15,11 +16,8 @@ class StockDataSourceTest {
     }
 
     @Test
-    fun testOne() {
-        runBlocking {
-            val stock = stockDataSource.getStockDataAsync().await()
+    fun testOne() = runBlocking {
+            val stock = stockDataSource.getStockData()
             Assert.assertNotNull(stock)
-        }
-
     }
 }

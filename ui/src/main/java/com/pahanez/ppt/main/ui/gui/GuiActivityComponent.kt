@@ -1,4 +1,4 @@
-package com.pahanez.ppt.main.ui.main
+package com.pahanez.ppt.main.ui.gui
 
 import com.pahanez.ppt.glue.di.BaseActivityComponent
 import com.pahanez.ppt.glue.di.CoreComponent
@@ -6,17 +6,16 @@ import dagger.BindsInstance
 import dagger.Component
 import io.plaidapp.core.dagger.scope.FeatureScope
 
-
 @FeatureScope
 @Component(dependencies = [CoreComponent::class])
-interface MainActivityComponent: BaseActivityComponent<MainActivity> {
+interface GuiActivityComponent: BaseActivityComponent<GuiActivity> {
 
     @Component.Builder
     interface Builder {
-        fun build(): MainActivityComponent
+        fun build(): GuiActivityComponent
 
         @BindsInstance
-        fun homeActivity(activity: MainActivity): Builder
+        fun guiActivity(activity: GuiActivity): Builder
         fun coreComponent(module: CoreComponent): Builder
     }
 
