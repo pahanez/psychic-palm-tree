@@ -40,5 +40,6 @@ object Libraries {
     const val logging = "com.squareup.okhttp3:logging-interceptor:3.12.0"
     const val coroutines = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
     const val jodaTime = "net.danlew:android.joda:2.10.1"
+    const val cicerone = "ru.terrakok.cicerone:cicerone:5.0.0"
 
 }

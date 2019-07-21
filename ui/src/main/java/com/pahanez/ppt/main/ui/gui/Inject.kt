@@ -5,10 +5,13 @@ import com.pahanez.ppt.main.coreComponent
 /**
  * Injector for GuiActivity.
  */
-fun inject(activity: GuiActivity) {
-    DaggerGuiActivityComponent.builder()
+fun inject(activity: GuiActivity): GuiActivityComponent {
+    val compoenent = DaggerGuiActivityComponent.builder()
         .coreComponent(activity.coreComponent())
         .guiActivity(activity)
         .build()
-        .inject(activity)
+
+        compoenent.inject(activity)
+
+    return compoenent
 }
