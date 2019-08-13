@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.pahanez.ppt.main">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".PPTApp"
             android:allowBackup="true"
